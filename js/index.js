@@ -26,7 +26,7 @@ function getCommits(i) {
   let username = i.owner.login;
   const req = new XMLHttpRequest();
   req.addEventListener('load', displayCommits);
-  req.open('GET', 'https://api.github.com/')
+  req.open('GET', 'https://api.github.com/' + i.owner.login + '/' + i.name + '/commits');
 }
 
 function displayCommits() {
