@@ -58,10 +58,7 @@ function displayBranches() {
     `<ul>${branches.map(
       b =>
         '<li>' +
-          'Username: ' + c.author.login + '<br />' +
-          'Full Name: ' + c.commit.author.name + '<br />' +
-          'Commit Message: ' + c.commit.message +
-          '</li>' + '<br />'
+          b.name
         ).join('')}</u>`;
     document.getElementById('details').innerHTML = branchesList;
 }
