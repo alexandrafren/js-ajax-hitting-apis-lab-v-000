@@ -14,8 +14,8 @@ function displayRepositories() {
     r =>
       '<li>' +
         '<a href="https://github.com/' + r.owner.login + '/' + r.name + '">' + r.name + '</a>' +
-        ' - <a href="#" data-repository="' + r.name + '" data-username="' + r.owner.login + '" onclick="getCommits(this)">Get Commits</a>' +
-        ' - <a href="#" data-repository="' + r.name + '" data-username="' + r.owner.login + '" onclick="getBranches(this)">Get Branches</a>' +
+        ' - <a href="#" data-repository="' + r.name + '" data-username="' + r.owner.login + '" onclick="getCommits(r.name, r.owner.login)">Get Commits</a>' +
+        ' - <a href="#" data-repository="' + r.name + '" data-username="' + r.owner.login + '" onclick="getBranches(r.name, r.owner.login)">Get Branches</a>' +
       '</li>'
   )
     .join('')}</ul>`;
@@ -45,7 +45,9 @@ function displayCommits() {
 }
 
 function getBranches() {
-
+  const req = new XMLHttpRequest();
+  req.addEventListener('load', displayBranches);
+  req.open('GET', '')
 }
 
 function displayBranches() {
