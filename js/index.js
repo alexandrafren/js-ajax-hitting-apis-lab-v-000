@@ -58,7 +58,7 @@ function displayBranches() {
     `<ul>${branches.map(
       b =>
         '<li>' +
-          b.name+
+          b.name +
           '</li>' + '<br />'
         ).join('')}</u>`;
     document.getElementById('details').innerHTML = branchesList;
