@@ -31,7 +31,7 @@ function displayCommits() {
 }
 
 function getBranches() {
-  
+
 }
 
 function displayBranches() {
