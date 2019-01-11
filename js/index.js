@@ -34,7 +34,7 @@ function displayCommits() {
   console.log(commits);
   const commitList = '<ul>${repos.map(
     c =>
-      '<li>' + 
+      '<li>' +
       c.author.login + c.commit.author.name + c.commit.message + '</li>'
   ).join('')}</u>';
   document.getElementById('details').innerHTML = commitsList;
