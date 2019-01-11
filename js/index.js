@@ -23,7 +23,7 @@ function displayRepositories() {
 }
 
 function getCommits(i) {
-  let username = i.username;
+  let username = i.owner.login;
   const req = new XMLHttpRequest();
   req.addEventListener('load', displayCommits);
   req.open('GET', 'https://api.github.com/')
