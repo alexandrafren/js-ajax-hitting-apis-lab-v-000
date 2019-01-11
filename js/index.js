@@ -23,14 +23,21 @@ function displayRepositories() {
 }
 
 function getCommits(i) {
-  let username = i.owner.login;
   const req = new XMLHttpRequest();
   req.addEventListener('load', displayCommits);
   req.open('GET', 'https://api.github.com/' + i.owner.login + '/' + i.name + '/commits');
+  req.send();
 }
 
 function displayCommits() {
-
+  var commits = JSON.parse(this.responseText);
+  console.log(commits);
+  const commitList = '<ul>${repos.map(
+    c =>
+      '<li>' + 
+      c.author.login + c.commit.author.name + c.commit.message + '</li>'
+  ).join('')}</u>';
+  document.getElementById('details').innerHTML = commitsList;
 }
 
 function getBranches() {
