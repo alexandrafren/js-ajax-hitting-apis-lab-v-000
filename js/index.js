@@ -22,10 +22,10 @@ function displayRepositories() {
   document.getElementById('repositories').innerHTML = repoList;
 }
 
-function getCommits(i) {
+function getCommits(repo, username) {
   const req = new XMLHttpRequest();
   req.addEventListener('load', displayCommits);
-  req.open('GET', 'https://api.github.com/' + i.owner.login + '/' + i.name + '/commits');
+  req.open('GET', 'https://api.github.com/' + username + '/' + repo + '/commits');
   req.send();
 }
 
