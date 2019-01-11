@@ -55,8 +55,8 @@ function displayBranches() {
   var branches = JSON.parse(this.responseText);
   console.log(branches);
   let branchesList =
-    `<ul>${commits.map(
-      c =>
+    `<ul>${branches.map(
+      b =>
         '<li>' +
           'Username: ' + c.author.login + '<br />' +
           'Full Name: ' + c.commit.author.name + '<br />' +
