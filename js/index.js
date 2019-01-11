@@ -23,5 +23,9 @@ function showRepositories() {
 }
 
 function displayCommits() {
+
+}
+
+function displayBranches() {
   
 }
