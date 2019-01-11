@@ -22,8 +22,11 @@ function displayRepositories() {
   document.getElementById('repositories').innerHTML = repoList;
 }
 
-function getCommits() {
-
+function getCommits(i) {
+  let username = i.username;
+  const req = new XMLHttpRequest();
+  req.addEventListener('load', displayCommits);
+  req.open('GET', 'https://api.github.com/')
 }
 
 function displayCommits() {
