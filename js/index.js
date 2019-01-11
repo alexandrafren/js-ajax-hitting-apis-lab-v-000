@@ -32,11 +32,15 @@ function getCommits(i) {
 function displayCommits() {
   var commits = JSON.parse(this.responseText);
   console.log(commits);
-  const commitList = '<ul>${repos.map(
-    c =>
-      '<li>' +
-      c.author.login + c.commit.author.name + c.commit.message + '</li>'
-  ).join('')}</u>';
+  let commitsList =
+    `<ul>${commits.map(
+      c =>
+        '<li>' +
+          'Username: ' + c.author.login + '<br />' +
+          'Full Name: ' + c.commit.author.name + '<br />' +
+          'Commit Message: ' + c.commit.message +
+        '</li>' + '<br />'
+    ).join('')}</u>`;
   document.getElementById('details').innerHTML = commitsList;
 }
 
